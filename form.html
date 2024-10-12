@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                     
+    <title>Form Data Diri</title>
+</head>
+<body>
+
+    <form id="dataForm" onsubmit="redirectToGif(event)">
+        <table>
+            <tr>
+                <th colspan="2">Form Data Diri</th>
+            </tr>
+            <tr>
+                <td>Nama:</td>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <td>NIM:</td>
+                <td><input type="text" name="nim" required></td>
+            </tr>
+            <tr>
+                <td>Tanggal:</td>
+                <td><input type="date" name="tanggal" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function redirectToGif(event) {
+            event.preventDefault(); 
+            const nama = event.target.nama.value;
+            const nim = event.target.nim.value;
+            const tanggal = event.target.tanggal.value;
+
+            sessionStorage.setItem('nama', nama);
+            sessionStorage.setItem('nim', nim);
+            sessionStorage.setItem('tanggal', tanggal);
+
+            window.location.href = 'celebration.html';
+        }
+    </script>
+
+</body>
+</html>
